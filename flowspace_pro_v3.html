@@ -81,29 +81,29 @@
     }
     
     /* Botão Voltar ao Topo */
-.btn-to-top {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: rgba(79, 156, 247, 0.2);
-  border: 1px solid rgba(79, 156, 247, 0.4);
-  color: #fff;
-  display: none; /* Invisível inicialmente */
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 999;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
+    .btn-to-top {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: rgba(79, 156, 247, 0.2);
+      border: 1px solid rgba(79, 156, 247, 0.4);
+      color: #fff;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 999;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
 
-.btn-to-top:hover {
-  background: rgba(79, 156, 247, 0.4);
-  transform: translateY(-5px);
-}
+    .btn-to-top:hover {
+      background: rgba(79, 156, 247, 0.4);
+      transform: translateY(-5px);
+    }
 
     .header-controls { display: flex; gap: 10px; margin-left: auto; align-items: center; flex-wrap: wrap; }
 
@@ -123,7 +123,17 @@
     .priority-media { background: rgba(255, 190, 50, 0.15); color: #ffcc55; border: 1px solid rgba(255,190,50,0.3); }
     .priority-baixa { background: rgba(80, 200, 120, 0.15); color: #66dd99; border: 1px solid rgba(80,200,120,0.3); }
 
-    select.priority-select { background: rgba(10, 18, 28, 0.85); border: 1px solid rgba(79, 156, 247, 0.25); color: #c8deff; border-radius: 20px; padding: 4px 8px; font-size: 0.72rem; cursor: pointer; outline: none; }
+    select.priority-select { 
+      background: rgba(10, 18, 28, 0.85); 
+      border: 1px solid rgba(79, 156, 247, 0.25); 
+      color: #c8deff; 
+      border-radius: 20px; 
+      padding: 4px 8px; 
+      font-size: 0.72rem; 
+      cursor: pointer;
+      outline: none;
+      transition: all 0.2s ease;
+    }
 
     .btn-delete-task {
       background: transparent; border: none; color: rgba(255, 90, 90, 0.45); cursor: pointer;
@@ -151,7 +161,10 @@
     @keyframes bgFlow { 0% { background-position: 0% 0%; } 50% { background-position: 100% 100%; } 100% { background-position: 0% 0%; } }
     .particles { 
       position: fixed; width: 100%; height: 100%; z-index: -1; 
-      background-image: radial-gradient(2px 2px at 20% 40%, rgba(100, 210, 255, 0.3), transparent), radial-gradient(2px 2px at 80% 70%, rgba(180, 140, 255, 0.2), transparent), radial-gradient(3px 3px at 40% 80%, rgba(80, 200, 120, 0.2), transparent);
+      background-image: 
+        radial-gradient(2px 2px at 20% 40%, rgba(100, 210, 255, 0.3), transparent), 
+        radial-gradient(2px 2px at 80% 70%, rgba(180, 140, 255, 0.2), transparent), 
+        radial-gradient(3px 3px at 50% 50%, rgba(200, 100, 255, 0.25), transparent);
       background-size: 200px 200px; animation: drift 40s linear infinite; opacity: 0.5; transition: opacity 0.6s;
     }
     @keyframes drift { 0% { transform: translate(0,0); } 100% { transform: translate(-200px,-100px); } }
@@ -175,14 +188,35 @@
     
     canvas { background: rgba(0,0,0,0.2); border-radius: 24px; padding: 12px; border: 1px solid rgba(79,156,247,0.2); width: 100%; max-height: 320px; }
     
-    .week-nav { display: flex; justify-content: space-between; align-items: center; margin: 16px 24px; padding: 16px 24px; background: rgba(79,156,247,0.08); border-radius: 60px; border: 1px solid rgba(79,156,247,0.25); }
+    .week-nav { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin: 16px 24px; 
+      padding: 16px 24px; 
+      background: rgba(79,156,247,0.08); 
+      border-radius: 60px; 
+      border: 1px solid rgba(79,156,247,0.2);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
     .container { padding: 8px 24px 40px 24px; display: flex; flex-direction: column; gap: 20px; }
     
     .day { background: rgba(16,26,40,0.5); border: 1px solid rgba(79,156,247,0.2); border-radius: 28px; padding: 22px 24px; transition: border-color 0.5s; }
     .day h3 { font-size: 1.4rem; display: flex; align-items: center; color: #dfebff; border-bottom: 1px solid rgba(79,156,247,0.3); padding-bottom: 10px; margin-bottom: 18px; }
     .day-date { font-size: 0.8rem; color: #4f9cf7; margin-left: auto; background: rgba(79,156,247,0.15); padding: 4px 12px; border-radius: 40px; }
     
-    .task { display: flex; align-items: center; background: rgba(0,0,0,0.2); padding: 8px 14px; border-radius: 60px; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 10px; flex-wrap: wrap; gap: 6px; }
+    .task { 
+      display: flex; 
+      align-items: center; 
+      background: rgba(0,0,0,0.2); 
+      padding: 8px 14px; 
+      border-radius: 60px; 
+      border: 1px solid rgba(255,255,255,0.05); 
+      margin-bottom: 10px; 
+      flex-wrap: wrap;
+      gap: 6px;
+    }
     .task input[type="text"] { background: transparent; border: none; color: #f0f7ff; width: 100%; padding: 8px 6px; outline: none; transition: all 0.3s ease; flex: 1; min-width: 150px; }
     .task input[type="text"].done-text { text-decoration: line-through; opacity: 0.5; }
     
@@ -191,9 +225,30 @@
     
     .timer-control { display: flex; align-items: center; gap: 10px; margin: 10px 0; padding: 10px; background: rgba(79,156,247,0.05); border-radius: 15px; font-size: 0.9rem; flex-wrap: wrap; }
     .timer-display { font-family: 'Courier New', monospace; font-weight: bold; color: #6aafe8; min-width: 50px; }
-    .btn-timer { padding: 5px 12px; font-size: 0.75rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(79,156,247,0.3); color: white; border-radius: 20px; cursor: pointer; transition: all 0.2s; }
+    .btn-timer { 
+      padding: 5px 12px; 
+      font-size: 0.75rem; 
+      background: rgba(255,255,255,0.1); 
+      border: 1px solid rgba(79,156,247,0.3); 
+      color: white; 
+      border-radius: 20px; 
+      cursor: pointer; 
+      transition: all 0.2s ease;
+    }
     .btn-timer:hover { background: rgba(79,156,247,0.2); }
-    .btn-reset { background: transparent; border: none; color: #ff5e5e; cursor: pointer; font-size: 0.8rem; padding: 5px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: transform 0.3s; }
+    .btn-reset { 
+      background: transparent; 
+      border: none; 
+      color: #ff5e5e; 
+      cursor: pointer; 
+      font-size: 0.8rem; 
+      padding: 5px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      border-radius: 50%;
+      transition: all 0.2s ease;
+    }
     .btn-reset:hover { transform: rotate(-90deg); color: #ff3333; }
     
     /* ==========================================================================
@@ -201,21 +256,59 @@
        ========================================================================== */
     .agenda-section { margin: 20px 24px; padding: 24px 28px; }
     .agenda-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-top: 16px; }
-    .agenda-item { background: rgba(255,255,255,0.04); padding: 14px; border-radius: 20px; border: 1px solid rgba(79,156,247,0.15); display: flex; flex-direction: column; gap: 10px; position: relative; }
-    .agenda-item textarea { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 10px 14px; border-radius: 16px; resize: vertical; min-height: 80px; font-family: inherit; font-size: 0.9rem; }
-    .agenda-item input[type="time"] { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #c8deff; padding: 8px 12px; border-radius: 12px; width: 100%; outline: none;}
+    .agenda-item { 
+      background: rgba(255,255,255,0.04); 
+      padding: 14px; 
+      border-radius: 20px; 
+      border: 1px solid rgba(79,156,247,0.15); 
+      display: flex; 
+      flex-direction: column; 
+      gap: 10px; 
+      position: relative;
+    }
+    .agenda-item textarea { 
+      background: rgba(0,0,0,0.3); 
+      border: 1px solid rgba(255,255,255,0.1); 
+      color: white; 
+      padding: 10px 14px; 
+      border-radius: 16px; 
+      resize: vertical; 
+      min-height: 80px; 
+      font-family: inherit;
+      outline: none;
+    }
+    .agenda-item input[type="time"] { 
+      background: rgba(0,0,0,0.3); 
+      border: 1px solid rgba(255,255,255,0.1); 
+      color: #c8deff; 
+      padding: 8px 12px; 
+      border-radius: 12px; 
+      width: 100%; 
+      outline: none;
+    }
     .agenda-item-header { display: flex; justify-content: space-between; align-items: center; }
     
-    #notification-popup { position: fixed; bottom: 24px; right: 24px; background: #1e3a5f; border-left: 5px solid #4f9cf7; padding: 18px 26px; border-radius: 20px; display: none; z-index: 9999; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    #notification-popup { 
+      position: fixed; 
+      bottom: 24px; 
+      right: 24px; 
+      background: #1e3a5f; 
+      border-left: 5px solid #4f9cf7; 
+      padding: 18px 26px; 
+      border-radius: 20px; 
+      display: none; 
+      z-index: 9999; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
 
     /* ==========================================================================
        MÓDULO: DASHBOARD PROFISSIONAL LATERAL
        ========================================================================== */
     .dashboard-panel {
-      position: fixed; top: 0; right: -100%; width: 400px; max-width: 100vw; height: 100vh;
+      position: fixed; top: 0; right: -100%; width: 90vw; max-width: 400px; height: 100vh;
       background: rgba(10, 18, 28, 0.95); backdrop-filter: blur(20px); border-left: 1px solid rgba(79,156,247,0.3);
       z-index: 10000; transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-      padding: 30px; display: flex; flex-direction: column; gap: 20px; overflow-y: auto;
+      padding: 20px; display: flex; flex-direction: column; gap: 20px; overflow-y: auto;
       box-shadow: -10px 0 30px rgba(0,0,0,0.5);
     }
     .dashboard-panel.open { right: 0; }
@@ -234,6 +327,7 @@
     @media (max-width: 600px) {
       .header-controls { margin-left: 0; width: 100%; justify-content: space-between; }
       header { flex-direction: column; align-items: flex-start; border-radius: 30px; }
+      .dashboard-panel { width: 100%; max-width: 100vw; }
     }
   </style>
 </head>
@@ -298,14 +392,14 @@
 
   <div class="container" id="app"></div>
 
-<button id="scrollToTop" class="btn-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-  <i class="fas fa-chevron-up"></i>
-</button>
+  <button id="scrollToTop" class="btn-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
   <div id="notification-popup">
     <strong style="color: white;"><i class="fas fa-bell"></i> FlowSpace Pro</strong>
     <p id="notif-text" style="color: #bbd4ff; margin-top: 5px;"></p>
-    <button onclick="this.parentElement.style.display='none'" style="margin-top:10px; background:transparent; border: 1px solid #4f9cf7; color: white; padding: 5px 15px; border-radius: 20px; cursor: pointer;">Fechar</button>
+    <button onclick="this.parentElement.style.display='none'" style="margin-top:10px; background:transparent; border: 1px solid #4f9cf7; color: white; padding: 5px 15px; border-radius: 20px; cursor: pointer;">OK</button>
   </div>
 
   <div id="pro-dashboard" class="dashboard-panel">
@@ -345,51 +439,49 @@
       // ==========================================================================
       const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
       const daysLabel = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+      const currentYear = new Date().getFullYear(); // Data dinâmica
       
       let db = {}; 
       let categories = ["Estudo", "Profissional", "Saúde"];
-      let currentMonth = new Date().getMonth(); // Atualizado dinamicamente
+      let currentMonth = new Date().getMonth();
       let currentWeek = 0;
       let agendaItems = [];
       let activeTimers = {};
       let focusMode = false;
-      
-      // Armazena temporariamente estado visual do botão "recorrente" ao adicionar
       let tempRecurringFlags = [false, false, false, false, false, false, false];
+      let timeCheckInterval = null;
+      let reminderCheckInterval = null;
 
       // Instâncias do Chart.js
       let lineChartInstance = null;
       let doughnutChartInstance = null;
 
-// Função para rolar até o dia atual
-window.jumpToToday = function() {
-  const now = new Date();
-  const todayIndex = now.getDay(); // 0 (Dom) a 6 (Sáb)
-  
-  // Só executa o scroll se estivermos visualizando o mês e semana atuais
-  const realMonth = new Date().getMonth();
-  if (currentMonth === realMonth) {
-    const element = document.getElementById(`day-container-${todayIndex}`);
-    if (element) {
-      setTimeout(() => {
-        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        // Efeito visual de destaque opcional
-        element.style.borderColor = '#6affe8';
-        setTimeout(() => { element.style.borderColor = 'rgba(79,156,247,0.2)'; }, 2000);
-      }, 500);
-    }
-  }
-};
+      // Função para rolar até o dia atual
+      window.jumpToToday = function() {
+        const now = new Date();
+        const todayIndex = now.getDay();
+        const realMonth = new Date().getMonth();
+        if (currentMonth === realMonth) {
+          const element = document.getElementById(`day-container-${todayIndex}`);
+          if (element) {
+            setTimeout(() => {
+              element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              element.style.borderColor = '#6affe8';
+              setTimeout(() => { element.style.borderColor = 'rgba(79,156,247,0.2)'; }, 2000);
+            }, 500);
+          }
+        }
+      };
 
-// Monitora o scroll para mostrar/esconder o botão de subir
-window.addEventListener('scroll', () => {
-  const btn = document.getElementById('scrollToTop');
-  if (window.scrollY > 400) {
-    btn.style.display = 'flex';
-  } else {
-    btn.style.display = 'none';
-  }
-});
+      // Monitora o scroll para mostrar/esconder o botão de subir
+      window.addEventListener('scroll', () => {
+        const btn = document.getElementById('scrollToTop');
+        if (window.scrollY > 400) {
+          btn.style.display = 'flex';
+        } else {
+          btn.style.display = 'none';
+        }
+      });
 
       // ==========================================================================
       // UTILITÁRIOS DE SEGURANÇA E HIGIENIZAÇÃO
@@ -411,11 +503,20 @@ window.addEventListener('scroll', () => {
             categories: categories,
             lastView: { month: currentMonth, week: currentWeek },
             agenda: agendaItems,
-            focusMode: focusMode
+            focusMode: focusMode,
+            activeTimers: Object.keys(activeTimers).reduce((acc, key) => {
+              if (activeTimers[key]) {
+                acc[key] = { endTime: activeTimers[key].endTime };
+              }
+              return acc;
+            }, {})
           };
           localStorage.setItem('flowspace_pro_data', JSON.stringify(payload));
         } catch (e) {
           console.error("Erro ao salvar dados no LocalStorage:", e);
+          if (e.name === 'QuotaExceededError') {
+            showNotification("⚠️ Espaço de armazenamento cheio. Alguns dados podem não ser salvos.");
+          }
         }
       }
 
@@ -430,6 +531,19 @@ window.addEventListener('scroll', () => {
             currentWeek = data.lastView?.week ?? 0;
             agendaItems = data.agenda || [];
             focusMode = data.focusMode || false;
+            
+            // Restaurar timers salvos
+            if (data.activeTimers) {
+              Object.keys(data.activeTimers).forEach(key => {
+                const endTime = data.activeTimers[key].endTime;
+                const now = Date.now();
+                if (endTime > now) {
+                  const remainingMs = endTime - now;
+                  const minutes = Math.ceil(remainingMs / 60000);
+                  startRestTimer(parseInt(key), minutes);
+                }
+              });
+            }
           }
         } catch (e) {
           console.error("Erro ao ler dados do LocalStorage, iniciando limpo:", e);
@@ -447,7 +561,7 @@ window.addEventListener('scroll', () => {
 
       function initDB(mIdx) {
         if (!db[mIdx]) db[mIdx] = {};
-        const weeks = getWeeksInMonth(2026, mIdx);
+        const weeks = getWeeksInMonth(currentYear, mIdx);
         for(let w = 0; w < weeks; w++) {
           if (!db[mIdx][w]) {
             db[mIdx][w] = daysLabel.map(() => []);
@@ -462,11 +576,10 @@ window.addEventListener('scroll', () => {
         
         if (prevW < 0) {
           prevM--;
-          if (prevM < 0) return; // Não retrocede ano neste escopo
-          prevW = getWeeksInMonth(2026, prevM) - 1;
+          if (prevM < 0) return;
+          prevW = getWeeksInMonth(currentYear, prevM) - 1;
         }
 
-        // Garante que o mês anterior exista antes de consultar
         if (!db[prevM]) initDB(prevM);
         if (!db[prevM][prevW]) return;
 
@@ -476,7 +589,6 @@ window.addEventListener('scroll', () => {
           
           pastTasks.forEach(pt => {
             if (pt.recurring) {
-              // Evita duplicar se já existir uma com o mesmo nome no dia alvo
               const alreadyExists = currentTasks.some(ct => ct.name === pt.name);
               if (!alreadyExists) {
                 currentTasks.push({
@@ -534,15 +646,11 @@ window.addEventListener('scroll', () => {
       }
 
       function showNotification(text) {
-        // Nativa
         if ("Notification" in window && Notification.permission === "granted") {
           new Notification("FlowSpace Pro", { body: text });
         }
-        // Fallback visual interno
         document.getElementById('notif-text').textContent = text;
         document.getElementById('notification-popup').style.display = 'block';
-        
-        // Auto-fechar popup interno após 8s
         setTimeout(() => { document.getElementById('notification-popup').style.display = 'none'; }, 8000);
       }
 
@@ -550,20 +658,27 @@ window.addEventListener('scroll', () => {
         if (activeTimers[dayIdx]) clearInterval(activeTimers[dayIdx].interval);
         let seconds = minutes * 60;
         const display = document.getElementById(`timer-val-${dayIdx}`);
+        const endTime = Date.now() + (seconds * 1000);
+        
         activeTimers[dayIdx] = {
           interval: setInterval(() => {
             seconds--;
             const mins = Math.floor(seconds / 60);
             const secs = seconds % 60;
-            display.textContent = `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+            if (display) {
+              display.textContent = `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+            }
             if (seconds <= 0) {
               clearInterval(activeTimers[dayIdx].interval);
-              display.textContent = "00:00";
+              if (display) display.textContent = "00:00";
               showNotification(`O descanso de ${minutes} min acabou! Hora de voltar ao fluxo.`);
               delete activeTimers[dayIdx];
+              saveData();
             }
-          }, 1000)
+          }, 1000),
+          endTime: endTime
         };
+        saveData();
       };
 
       window.resetRestTimer = function(dayIdx) {
@@ -573,7 +688,17 @@ window.addEventListener('scroll', () => {
         }
         const display = document.getElementById(`timer-val-${dayIdx}`);
         if(display) display.textContent = "00:00";
+        saveData();
       };
+
+      function cleanupTimers() {
+        Object.keys(activeTimers).forEach(key => {
+          if (activeTimers[key] && activeTimers[key].interval) {
+            clearInterval(activeTimers[key].interval);
+          }
+        });
+        activeTimers = {};
+      }
 
       // ==========================================================================
       // GESTÃO DE CATEGORIAS
@@ -582,17 +707,21 @@ window.addEventListener('scroll', () => {
         const action = prompt("Escolha: (1) Adicionar (2) Excluir").trim();
         if (action === "1") {
           const n = prompt("Nova categoria:");
-          if (n && !categories.includes(n)) { categories.push(escapeHTML(n)); renderCategorySelectors(); }
+          if (n && !categories.includes(n)) { 
+            categories.push(escapeHTML(n)); 
+            renderCategorySelectors(); 
+            saveData();
+          }
         } else if (action === "2") {
           const d = prompt("Excluir qual?\n" + categories.join(", "));
           if (categories.includes(d)) { 
             if(confirm(`Tem certeza que deseja excluir "${d}"?`)) {
               categories = categories.filter(c => c !== d); 
-              renderCategorySelectors(); 
+              renderCategorySelectors();
+              saveData();
             }
           }
         }
-        saveData();
       };
 
       function renderCategorySelectors() {
@@ -604,51 +733,51 @@ window.addEventListener('scroll', () => {
         createUI();
       }
 
-//FUNÇÃO DE REPLICAÇÃO 
-window.replicateTaskToWeek = function(dIdx, tIdx) {
-  const taskToCopy = db[currentMonth][currentWeek][dIdx][tIdx];
-  
-  if (!confirm(`Deseja copiar a tarefa "${taskToCopy.name}" para todos os outros dias desta semana?`)) return;
+      // Função de replicação - CORRIGIDA
+      window.replicateTaskToWeek = function(dIdx, tIdx) {
+        if (!db[currentMonth][currentWeek][dIdx][tIdx]) return;
+        const taskToCopy = db[currentMonth][currentWeek][dIdx][tIdx];
+        
+        if (!confirm(`Deseja copiar a tarefa "${taskToCopy.name}" para todos os outros dias desta semana?`)) return;
 
-  // Percorre os 7 dias da semana atual
-  for (let d = 0; d < 7; d++) {
-    if (d === dIdx) continue; // Pula o dia de origem
+        for (let d = 0; d < 7; d++) {
+          if (d === dIdx) continue;
+          const dayTasks = db[currentMonth][currentWeek][d];
+          const alreadyExists = dayTasks.some(t => t.name === taskToCopy.name);
+          
+          if (!alreadyExists) {
+            dayTasks.push({
+              ...taskToCopy,
+              done: false
+            });
+          }
+        }
 
-    const dayTasks = db[currentMonth][currentWeek][d];
-    
-    // Verifica se já existe uma tarefa com o mesmo nome para evitar duplicados
-    const alreadyExists = dayTasks.some(t => t.name === taskToCopy.name);
-    
-    if (!alreadyExists) {
-      dayTasks.push({
-        ...taskToCopy,
-        done: false // A cópia começa como pendente
-      });
-    }
-  }
+        createUI();
+        saveData();
+        showNotification("Rotina aplicada a toda a semana!");
+      };
 
-  createUI();
-  saveData();
-  showNotification("Rotina aplicada a toda a semana!");
-};
       // ==========================================================================
       // NAVEGAÇÃO E TAREFAS
       // ==========================================================================
-            window.changeWeek = function(dir) {
-        const weeks = getWeeksInMonth(2026, currentMonth);
+      window.changeWeek = function(dir) {
+        const weeks = getWeeksInMonth(currentYear, currentMonth);
         let nW = currentWeek + dir;
         
-        if (nW >= weeks) { if (currentMonth < 11) { currentMonth++; currentWeek = 0; } }
-        else if (nW < 0) { if (currentMonth > 0) { currentMonth--; currentWeek = getWeeksInMonth(2026, currentMonth) - 1; } }
+        if (nW >= weeks) { 
+          if (currentMonth < 11) { currentMonth++; currentWeek = 0; } 
+        }
+        else if (nW < 0) { 
+          if (currentMonth > 0) { currentMonth--; currentWeek = getWeeksInMonth(currentYear, currentMonth) - 1; } 
+        }
         else { currentWeek = nW; }
         
         initDB(currentMonth);
-        
-        // CORREÇÃO: Puxa as tarefas recorrentes dinamicamente ao mudar de semana
         applyRecurringTasks(currentMonth, currentWeek);
         
         document.getElementById('filterMonth').value = currentMonth;
-        tempRecurringFlags = [false, false, false, false, false, false, false]; // reseta flags visuais
+        tempRecurringFlags = [false, false, false, false, false, false, false];
         createUI();
         saveData();
       };
@@ -681,7 +810,7 @@ window.replicateTaskToWeek = function(dIdx, tIdx) {
         input.value = "";
         createUI();
         saveData();
-        updateProfessionalDashboard(); // Atualiza painel lateral se aberto
+        updateProfessionalDashboard();
       };
 
       window.toggleTask = function(dIdx, tIdx) {
@@ -745,31 +874,37 @@ window.replicateTaskToWeek = function(dIdx, tIdx) {
       }
 
       function initCharts() {
-        const ctxLine = document.getElementById('chart').getContext('2d');
-        lineChartInstance = new Chart(ctxLine, {
-          type: 'line',
-          data: {
-            labels: daysLabel,
-            datasets: [{ label: 'Concluídas', data: [0,0,0,0,0,0,0], borderColor: '#4f9cf7', backgroundColor: 'rgba(79,156,247,0.1)', fill: true, tension: 0.4 }]
-          },
-          options: { responsive: true, scales: { y: { beginAtZero: true, display: false }, x: { ticks: { color: '#c3d6ff' } } } }
-        });
+        try {
+          const ctxLine = document.getElementById('chart').getContext('2d');
+          if (lineChartInstance) lineChartInstance.destroy();
+          lineChartInstance = new Chart(ctxLine, {
+            type: 'line',
+            data: {
+              labels: daysLabel,
+              datasets: [{ label: 'Concluídas', data: [0,0,0,0,0,0,0], borderColor: '#4f9cf7', backgroundColor: 'rgba(79,156,247,0.1)', fill: true, tension: 0.4 }]
+            },
+            options: { responsive: true, scales: { y: { beginAtZero: true, display: false }, x: { ticks: { color: '#c3d6ff' } } } }
+          });
 
-        const ctxDoughnut = document.getElementById('pro-doughnut-chart').getContext('2d');
-        doughnutChartInstance = new Chart(ctxDoughnut, {
-          type: 'doughnut',
-          data: {
-            labels: ['Concluídas', 'Pendentes'],
-            datasets: [{ data: [0, 1], backgroundColor: ['#1f8b4c', '#ff5e5e'], borderWidth: 0 }]
-          },
-          options: {
-            responsive: true, cutout: '75%', plugins: { legend: { labels: { color: '#c3d6ff' } } }
-          }
-        });
+          const ctxDoughnut = document.getElementById('pro-doughnut-chart').getContext('2d');
+          if (doughnutChartInstance) doughnutChartInstance.destroy();
+          doughnutChartInstance = new Chart(ctxDoughnut, {
+            type: 'doughnut',
+            data: {
+              labels: ['Concluídas', 'Pendentes'],
+              datasets: [{ data: [0, 1], backgroundColor: ['#1f8b4c', '#ff5e5e'], borderWidth: 0 }]
+            },
+            options: {
+              responsive: true, cutout: '75%', plugins: { legend: { labels: { color: '#c3d6ff' } } }
+            }
+          });
+        } catch (e) {
+          console.error("Erro ao inicializar gráficos:", e);
+        }
       }
 
       function updateStats() {
-        if(lineChartInstance) {
+        if(lineChartInstance && db[currentMonth] && db[currentMonth][currentWeek]) {
           lineChartInstance.data.datasets[0].data = db[currentMonth][currentWeek].map(day => day.filter(t => t.done).length);
           lineChartInstance.update();
         }
@@ -782,9 +917,11 @@ window.replicateTaskToWeek = function(dIdx, tIdx) {
         
         const catFilter = document.getElementById('filterCategory').value;
 
+        if (!db[currentMonth] || !db[currentMonth][currentWeek]) return;
+
         db[currentMonth][currentWeek].forEach((tasks, i) => {
-          const firstDay = new Date(2026, currentMonth, 1).getDay();
-          const target   = new Date(2026, currentMonth, 1);
+          const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+          const target   = new Date(currentYear, currentMonth, 1);
           target.setDate(target.getDate() + ((currentWeek * 7) + i - firstDay));
           
           const visibleTasks = catFilter === "all" ? tasks : tasks.filter(t => t.cat === catFilter);
@@ -827,8 +964,6 @@ window.replicateTaskToWeek = function(dIdx, tIdx) {
             </div>`;
           
           const list = div.querySelector('.task-list');
-
-          // Ordenação por prioridade
           const prioOrder = { alta: 0, media: 1, baixa: 2 };
           const sorted = tasks
             .map((t, idx) => ({ ...t, _origIdx: idx }))
@@ -843,15 +978,15 @@ window.replicateTaskToWeek = function(dIdx, tIdx) {
               <input type="checkbox" ${t.done ? 'checked' : ''} onchange="toggleTask(${i}, ${tIdx})">
               <input type="text" class="${t.done ? 'done-text' : ''}" value="${escapeHTML(t.name)}" onchange="editTask(${i}, ${tIdx}, this.value)">
               
-              <button class="btn-recurring ${t.recurring ? 'active' : ''}" style="width:24px; height:24px; font-size:0.6rem; border:none;" onclick="toggleTaskRecurring(${i}, ${tIdx})" title="Tarefa Semanal">
+              <button class="btn-recurring ${t.recurring ? 'active' : ''}" style="width:24px; height:24px; font-size:0.6rem; border:none; background:transparent;" onclick="toggleTaskRecurring(${i}, ${tIdx})" title="Tarefa recorrente">
                 <i class="fas fa-redo"></i>
               </button>
 
-<button class="btn-timer" style="padding: 2px 6px; font-size: 0.65rem; background: rgba(106, 175, 232, 0.1);" 
-        onclick="replicateTaskToWeek(${i}, ${tIdx})" 
-        title="Aplicar esta rotina na semana toda">
-  <i class="fas fa-magic"></i>
-</button>
+              <button class="btn-timer" style="padding: 2px 6px; font-size: 0.65rem; background: rgba(106, 175, 232, 0.1);" 
+                      onclick="replicateTaskToWeek(${i}, ${tIdx})" 
+                      title="Aplicar esta rotina na semana toda">
+                <i class="fas fa-magic"></i>
+              </button>
 
               ${priorityBadge(t.priority)}
               <select class="priority-select" style="margin-left:4px;" onchange="changeTaskPriority(${i}, ${tIdx}, this.value)">
@@ -872,7 +1007,7 @@ window.replicateTaskToWeek = function(dIdx, tIdx) {
       }
 
       // ==========================================================================
-      // AGENDA (ATUALIZADO COM TEXTAREA E DELETE)
+      // AGENDA
       // ==========================================================================
       window.addAgendaItem = () => { 
         agendaItems.push({ id: Date.now(), text: '', time: '', notified: false }); 
@@ -884,7 +1019,7 @@ window.replicateTaskToWeek = function(dIdx, tIdx) {
         const it = agendaItems.find(a => a.id === id); 
         if(it) { 
           it[f] = v;
-          if(f === 'time') it.notified = false; // reseta notificação se mudar hora
+          if(f === 'time') it.notified = false;
           saveData(); 
         }
       };
@@ -915,7 +1050,6 @@ window.replicateTaskToWeek = function(dIdx, tIdx) {
       function checkReminders(now) {
         const cur = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
         agendaItems.forEach(it => {
-          // Dispara se o horário bater, se houver texto, e não foi notificado hoje
           if(it.time === cur && !it.notified && it.text.trim() !== '') { 
             showNotification(`Agenda: ${it.text}`);
             it.notified = true; 
@@ -925,7 +1059,7 @@ window.replicateTaskToWeek = function(dIdx, tIdx) {
       }
 
       // ==========================================================================
-      // DASHBOARD PROFISSIONAL (LATERAL)
+      // DASHBOARD PROFISSIONAL
       // ==========================================================================
       window.toggleDashboard = function() {
         const dash = document.getElementById('pro-dashboard');
@@ -939,7 +1073,6 @@ window.replicateTaskToWeek = function(dIdx, tIdx) {
         let total = 0;
         let done = 0;
         
-        // Varre todo o BD (todos meses, semanas e dias)
         for (let m in db) {
           for (let w in db[m]) {
             for (let d = 0; d < 7; d++) {
@@ -968,56 +1101,71 @@ window.replicateTaskToWeek = function(dIdx, tIdx) {
       // ==========================================================================
       // INICIALIZAÇÃO
       // ==========================================================================
-            document.getElementById('filterMonth').onchange = (e) => { 
-        currentMonth = parseInt(e.target.value); 
-        currentWeek = 0; 
-        initDB(currentMonth); 
-        applyRecurringTasks(currentMonth, currentWeek); // Garante que puxará ao trocar pelo filtro
-        createUI(); 
-        saveData();
-      };
+      function init() {
+        loadData();
+        initDB(currentMonth);
+        applyRecurringTasks(currentMonth, currentWeek);
+        renderCategorySelectors();
+        renderAgenda();
+        initCharts();
+        createUI();
+        applyFocusMode();
+        checkNotificationUI();
 
+        // Preencher seletor de mês
+        const filterMonth = document.getElementById('filterMonth');
+        months.forEach((m, i) => {
+          const opt = document.createElement('option');
+          opt.value = i;
+          opt.textContent = m;
+          filterMonth.appendChild(opt);
+        });
+        filterMonth.value = currentMonth;
 
-      document.getElementById('filterCategory').onchange = () => { createUI(); };
-
-      setInterval(() => {
-        const now = new Date();
-        document.getElementById('real-time').textContent = 
-          now.toLocaleDateString('pt-BR', { weekday: 'short', day: '2-digit', month: 'short' }) + 
-          ' • ' + now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-        checkReminders(now);
-        
-        // Reseta os lembretes à meia noite
-        if (now.getHours() === 0 && now.getMinutes() === 0 && now.getSeconds() === 0) {
-          agendaItems.forEach(it => it.notified = false);
+        // Event listeners
+        document.getElementById('filterMonth').onchange = (e) => { 
+          currentMonth = parseInt(e.target.value); 
+          currentWeek = 0; 
+          initDB(currentMonth); 
+          applyRecurringTasks(currentMonth, currentWeek);
+          tempRecurringFlags = [false, false, false, false, false, false, false];
+          createUI(); 
           saveData();
-        }
-      }, 1000);
+        };
 
-      const filterMonth = document.getElementById('filterMonth');
-      months.forEach((m, i) => {
-        const opt = document.createElement('option');
-        opt.value = i;
-        opt.textContent = m;
-        filterMonth.appendChild(opt);
+        document.getElementById('filterCategory').onchange = () => { createUI(); };
+
+        // Atualizar relógio e verificar lembretes
+        if (timeCheckInterval) clearInterval(timeCheckInterval);
+        timeCheckInterval = setInterval(() => {
+          const now = new Date();
+          document.getElementById('real-time').textContent = 
+            now.toLocaleDateString('pt-BR', { weekday: 'short', day: '2-digit', month: 'short' }) + 
+            ' • ' + now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+          checkReminders(now);
+          
+          if (now.getHours() === 0 && now.getMinutes() === 0 && now.getSeconds() === 0) {
+            agendaItems.forEach(it => it.notified = false);
+            saveData();
+          }
+        }, 1000);
+      }
+
+      // Cleanup ao descarregar a página
+      window.addEventListener('beforeunload', () => {
+        cleanupTimers();
+        if (timeCheckInterval) clearInterval(timeCheckInterval);
+        saveData();
       });
 
-      // Fluxo Inicial
-      loadData();
-      initDB(currentMonth);
-      applyRecurringTasks(currentMonth, currentWeek); // Puxa recorrência ao abrir o app
-      filterMonth.value = currentMonth;
-      
-      initCharts();
-      renderCategorySelectors();
-      renderAgenda();
-      applyFocusMode();
-      createUI();
-      checkNotificationUI();
-      jumpToToday();
- // Mostra botão de permissão se necessário
+      // Iniciar aplicação
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
 
-    })();
+    })(); // Fim da IIFE
   </script>
 </body>
-  </html>
+</html>
